@@ -1,0 +1,128 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Course_Work_BD_WPF"
+      xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" x:Class="Course_Work_BD_WPF.SalaryEvaluationPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="680" d:DesignWidth="830"
+      Title="SalaryEvaluationPage">
+
+    <Grid Width="830" Height="680">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF22C1C3" Offset="0"/>
+                <GradientStop Color="#FFFDBB2D" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="40" Margin="780,10,-520,0" VerticalAlignment="Top" Width="40" Source="Images/ic_open_with_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="StartMoving">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Label Content="Statistics - Salary" Margin="10,10,561,0" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="259" Height="48"/>
+
+        <Wpf:CartesianChart x:Name="Chart" Margin="10,121,10,0" Height="451" VerticalAlignment="Top">
+            <Wpf:CartesianChart.AxisX>
+                <Wpf:Axis x:Name="AxisX" LabelsRotation="45" ShowLabels="True" Title="Табельный номер сотрудника" Position="LeftBottom" Foreground="#FF087EE0">
+                    <Wpf:Axis.Separator>
+                        <Wpf:Separator Step="1"/>
+                    </Wpf:Axis.Separator>
+                </Wpf:Axis>
+            </Wpf:CartesianChart.AxisX>
+            <Wpf:CartesianChart.AxisY>
+                <Wpf:Axis x:Name="AxisY" Title="Стоимость продаж" Position="RightTop" Foreground="#FF087EE0"/>
+            </Wpf:CartesianChart.AxisY>
+            <Wpf:CartesianChart.Series>
+                <Wpf:ColumnSeries x:Name="ChartColumnSeries" />
+                <Wpf:LineSeries x:Name="ChartLineSeries" Visibility="Hidden"/>
+                <Wpf:StackedAreaSeries x:Name="ChartOHCLSeries" Visibility="Hidden" />
+            </Wpf:CartesianChart.Series>
+        </Wpf:CartesianChart>
+        <DatePicker x:Name="FromDatePicker" HorizontalAlignment="Left" Margin="142,82,-71,0" VerticalAlignment="Top" Width="229" Height="39" FontSize="24" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light" Background="#00000000" Foreground="White" CalendarOpened="DatePicker_CalendarOpened" CalendarClosed="DatePicker_CalendarClosed" SelectedDateChanged="SelectedFromDateChanged">
+            <DatePicker.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FFE3E9EF" Offset="1"/>
+                </LinearGradientBrush>
+            </DatePicker.BorderBrush>
+        </DatePicker>
+        <DatePicker x:Name="ToDatePicker" HorizontalAlignment="Left" Margin="446,82,-376,0" VerticalAlignment="Top" Width="230" Height="39" FontSize="24" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light" Background="#00000000" Foreground="White" CalendarOpened="DatePicker_CalendarOpened" CalendarClosed="DatePicker_CalendarClosed" SelectedDateChanged="SelectedToDateChanged">
+            <DatePicker.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FFE3E9EF" Offset="1"/>
+                </LinearGradientBrush>
+            </DatePicker.BorderBrush>
+        </DatePicker>
+        <Label Content="-" HorizontalAlignment="Left" Margin="401,90,-116,0" VerticalAlignment="Top" Width="15" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="80" Margin="10,590,0,-370" VerticalAlignment="Top" Width="80" Source="Images/ic_arrow_back_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="BackToMenuPage">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn2"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="40" Margin="726,82,-466,0" VerticalAlignment="Top" Width="40" Source="Images/ic_show_chart_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="ChangeChartType">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn1"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+
+    </Grid>
+</Page>

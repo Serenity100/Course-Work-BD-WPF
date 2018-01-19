@@ -1,0 +1,75 @@
+﻿<Page x:Class="Course_Work_BD_WPF.EditTablePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Course_Work_BD_WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="EditTablePage">
+
+    <Grid Width="800" Height="600">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF22C1C3" Offset="0"/>
+                <GradientStop Color="#FFFDBB2D" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <DataGrid x:Name="TableDG" Margin="10,63,10,100" RowBackground="Transparent" Background="Transparent" Foreground="White">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+        </DataGrid>
+        <Image HorizontalAlignment="Left" Height="40" Margin="750,10,0,0" VerticalAlignment="Top" Width="40" Source="Images/ic_open_with_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="StartMoving">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Label Content="Accounting - Edit Table" Margin="10,10,444,0" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="346" Height="48"/>
+        <Image HorizontalAlignment="Left" Height="80" Margin="10,510,0,0" VerticalAlignment="Top" Width="80" Source="Images/ic_arrow_back_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="BackToMenuPage">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn1"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+    </Grid>
+</Page>

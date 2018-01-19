@@ -1,0 +1,24 @@
+﻿<controls:MetroWindow
+    xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        x:Class="Course_Work_BD_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        AllowsTransparency="True"
+        GlowBrush="Aquamarine"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize" IsCloseButtonEnabled="False" IsMinButtonEnabled="False" ShowTitleBar="False" ShowCloseButton="False" SaveWindowPosition="True">
+
+    <controls:MetroWindow.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF22C1C3" Offset="0"/>
+            <GradientStop Color="#FFFDBB2D" Offset="1"/>
+        </LinearGradientBrush>
+    </controls:MetroWindow.Background>
+    <Grid>
+        <Frame Name="RootFrame" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" />
+    </Grid>
+</controls:MetroWindow>

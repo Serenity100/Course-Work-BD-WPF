@@ -1,0 +1,98 @@
+﻿<Page x:Class="Course_Work_BD_WPF.AddPublishToDBPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" d:DesignWidth="530" d:DesignHeight="600"
+      Title="AddPublishPage">
+
+    <Grid Width="530" Height="600">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF22C1C3" Offset="0"/>
+                <GradientStop Color="#FFFDBB2D" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="40" Margin="480,10,0,0" VerticalAlignment="Top" Width="40" Source="Images/ic_open_with_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="StartMoving">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Label Content="Manager - Publish House" Margin="10,10,168,0" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="352" Height="48" FontFamily="/Course Work BD WPF;component/Fonts/#Raleway Thin"/>
+        <Label Content="Название:" Margin="10,100,329,0" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="191" Height="48" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light"/>
+        <TextBox x:Name="TitleTB" Height="39" Margin="206,104,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Style="{StaticResource RalewayFont}" Background="Transparent" Foreground="White" FontSize="24" UndoLimit="0" CaretBrush="White" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light" FontWeight="Thin" TextChanged="TextChanged"/>
+        <GroupBox Header="Адрес издательства" HorizontalAlignment="Left" Height="272" Margin="17,167,0,0" VerticalAlignment="Top" Width="503"/>
+        <Label Content="Город:" Margin="25,216,329,0" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="176" Height="48" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light"/>
+        <Label Content="Улица:" Margin="25,269,329,0" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="176" Height="48" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light"/>
+        <Label Content="Дом:" Margin="25,322,329,0" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="176" Height="48" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light"/>
+        <Label Content="Квартира:" Margin="25,375,329,0" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="176" Height="48" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light"/>
+        <TextBox x:Name="CityTB" Height="38" Margin="206,220,24,0" TextWrapping="Wrap" VerticalAlignment="Top" Style="{StaticResource RalewayFont}" Background="Transparent" Foreground="White" FontSize="24" UndoLimit="0" CaretBrush="White" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light" TextChanged="TextChanged"/>
+        <TextBox x:Name="StreetTB" Height="40" Margin="206,272,24,0" TextWrapping="Wrap" VerticalAlignment="Top" Style="{StaticResource RalewayFont}" Background="Transparent" Foreground="White" FontSize="24" UndoLimit="0" CaretBrush="White" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light" TextChanged="TextChanged"/>
+            <TextBox x:Name="HouseTB" Height="38" Margin="206,326,24,0" TextWrapping="Wrap" VerticalAlignment="Top" Style="{StaticResource RalewayFont}" Background="Transparent" Foreground="White" FontSize="24" UndoLimit="0" CaretBrush="White" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light" TextChanged="TextChanged"/>
+        <TextBox x:Name="FlatTB" Height="40" Margin="206,378,24,0" TextWrapping="Wrap" VerticalAlignment="Top" Style="{StaticResource RalewayFont}" Background="Transparent" Foreground="White" FontSize="24" UndoLimit="0" CaretBrush="White" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light" TextChanged="TextChanged"/>
+        <Image x:Name="AddPublishmentImgBtn" HorizontalAlignment="Left" Height="80" Margin="437,510,0,0" VerticalAlignment="Top" Width="83" Source="Images/ic_add_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="AddPublishToDB" Visibility="Hidden">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn1"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="80" Margin="10,510,0,0" VerticalAlignment="Top" Width="80" Source="Images/ic_arrow_back_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="BackToManagerPage">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn2"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+    </Grid>
+</Page>

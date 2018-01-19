@@ -1,0 +1,119 @@
+﻿<Page x:Class="Course_Work_BD_WPF.SelectColumnsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+      
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="530"
+      Title="SelectColumnsPage">
+    <Page.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Height" Value="64" />
+            <Setter Property="Width" Value="64" />
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
+        </Style>
+    </Page.Resources>
+    <Grid Width="530" Height="550">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF22C1C3" Offset="0"/>
+                <GradientStop Color="#FFFDBB2D" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <StackPanel x:Name="ColumnsStackPanel" Margin="20,87,10,214"/>
+        <Image HorizontalAlignment="Left" Height="40" Margin="480,10,0,0" VerticalAlignment="Top" Width="40" Source="Images/ic_open_with_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="StartMoving">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Label Content="Accounting - Select Columns" Margin="10,10,110,0" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="410" Height="48"/>
+        <Image Margin="0,460,440,0" Source="Images/ic_arrow_back_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="BackToSelectTablePage" HorizontalAlignment="Right" Width="80" Height="80" VerticalAlignment="Top">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn2"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Image Margin="0,460,10,0" Source="Images/ic_check_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="ShowSelectedTableView" HorizontalAlignment="Right" Width="80" Height="80" VerticalAlignment="Top">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn1"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn1" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Label Content="Количество строк:" Margin="10,0,228,166" VerticalAlignment="Bottom" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="292" Height="48" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light"/>
+        <Controls:NumericUpDown x:Name="RowNumberUpDown" Margin="0,343,10,0" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Background="{x:Null}" HasDecimals="False" Foreground="White" FontFamily="/Course Work BD WPF;component/Fonts/Monserrat/#Montserrat Light" FontSize="18" HorizontalAlignment="Right" Width="213" Height="38" Value="1000" Minimum="1">
+            <Controls:NumericUpDown.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FFE3E9EF" Offset="1"/>
+                </LinearGradientBrush>
+            </Controls:NumericUpDown.BorderBrush>
+        </Controls:NumericUpDown>
+
+        <Controls:Flyout Position="Right" Width="530" x:Name="TableViewFlyout">
+            <Grid>
+                <DataGrid x:Name="SelectedTableViewDG" Margin="0,0,0,79"/>
+                <Button Style="{DynamicResource MetroCircleButtonStyle}" Height="64" Margin="233,401,233,10" Click="SaveToExcelFormat">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/ic_excel_black_128px.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Controls:Flyout>
+    </Grid>
+</Page>

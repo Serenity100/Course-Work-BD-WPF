@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C53C30D4-7FCF-4C91-A320-83B94D46CF88}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Course_Work_BD_WPF</RootNamespace>
+    <AssemblyName>Course Work BD WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="De.TorstenMandelkow.MetroChart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernUICharts.1.0.2\lib\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.5.0.23, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddAuthorToDBPage.xaml.cs">
+      <DependentUpon>AddAuthorToDBPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddBookToDBPage.xaml.cs">
+      <DependentUpon>AddBookToDBPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddCustomerToDBPage.xaml.cs">
+      <DependentUpon>AddCustomerToDBPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddEmployeeToDBPage.xaml.cs">
+      <DependentUpon>AddEmployeeToDBPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorGetter.cs" />
+    <Compile Include="BookGetter.cs" />
+    <Compile Include="CustomerGetter.cs" />
+    <Compile Include="EditTablePage.xaml.cs">
+      <DependentUpon>EditTablePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeGetter.cs" />
+    <Compile Include="Getter.cs" />
+    <Compile Include="OrderGetter.cs" />
+    <Compile Include="PeriodStatsPage.xaml.cs">
+      <DependentUpon>PeriodStatsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PublishGetter.cs" />
+    <Compile Include="SalaryEvaluationPage.xaml.cs">
+      <DependentUpon>SalaryEvaluationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SchemaColumnsGetter.cs" />
+    <Compile Include="SelectColumnsPage.xaml.cs">
+      <DependentUpon>SelectColumnsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectTablePage.xaml.cs">
+      <DependentUpon>SelectTablePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SellerPage.xaml.cs">
+      <DependentUpon>SellerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddPublishToDBPage.xaml.cs">
+      <DependentUpon>AddPublishToDBPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerPage.xaml.cs">
+      <DependentUpon>ManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordPage.xaml.cs">
+      <DependentUpon>PasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SqlConnector.cs" />
+    <Compile Include="StatisticsPage.xaml.cs">
+      <DependentUpon>StatisticsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
+    <Page Include="AddAuthorToDBPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddBookToDBPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddCustomerToDBPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEmployeeToDBPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditTablePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PeriodStatsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SalaryEvaluationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectColumnsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectTablePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SellerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddPublishToDBPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="StatisticsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fonts\Raleway-Thin.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <Resource Include="Fonts\Monserrat\Montserrat-Black.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-BlackItalic.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-Bold.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-BoldItalic.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-ExtraBold.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-ExtraLight.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-Italic.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-Light.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-LightItalic.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-Medium.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-MediumItalic.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-Regular.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-SemiBold.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-Thin.ttf" />
+    <Resource Include="Fonts\Monserrat\Montserrat-ThinItalic.ttf" />
+    <Resource Include="Fonts\PoiretOne-Regular.ttf" />
+    <Resource Include="Fonts\10996.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_open_with_white_48dp_1x.png" />
+    <Resource Include="Images\ic_open_with_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_check_white_48dp_1x.png" />
+    <Resource Include="Images\ic_check_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_power_settings_new_white_48dp_1x.png" />
+    <Resource Include="Images\ic_power_settings_new_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_person_white_48dp_1x.png" />
+    <Resource Include="Images\ic_person_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_security_white_48dp_1x.png" />
+    <Resource Include="Images\ic_security_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_arrow_back_white_48dp_1x.png" />
+    <Resource Include="Images\ic_arrow_back_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_add_white_48dp_1x.png" />
+    <Resource Include="Images\ic_add_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_delivery_white_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_seller_white_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_buyer_white_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_add_circle_outline_white_48dp_1x.png" />
+    <Resource Include="Images\ic_add_circle_outline_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_menu_white_48dp_1x.png" />
+    <Resource Include="Images\ic_menu_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_navigate_next_white_48dp_1x.png" />
+    <Resource Include="Images\ic_navigate_next_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_book_white_48dp_1x.png" />
+    <Resource Include="Images\ic_book_white_48dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_publishment_white_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_employee_white_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_author_white_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_order_white_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_author_book_white_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_order_books_white_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_excel_black_128px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_excel_black_256px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_excel_green_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_show_chart_white_48dp_1x.png" />
+    <Resource Include="Images\ic_show_chart_white_48dp_2x.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

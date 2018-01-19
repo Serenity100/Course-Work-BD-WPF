@@ -1,0 +1,35 @@
+﻿<Application x:Class="Course_Work_BD_WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+            <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+            <!-- Accent and AppTheme setting -->
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="RalewayFont">
+                <Setter Property="TextElement.FontFamily"
+                Value= "/Fonts/#Raleway Thin"/>
+            </Style>
+
+            <Style x:Key="EchoesSansFont">
+                <Setter Property="TextElement.FontFamily"
+                Value= "/Fonts/#Echoes Sans"/>
+            </Style>
+
+            <Style x:Key="MonserratFont">
+                <Setter Property="TextElement.FontFamily"
+                Value= "/Fonts/Monserrat/#Monserrat"/>
+            </Style>
+        </ResourceDictionary>
+
+        
+    </Application.Resources>
+</Application>

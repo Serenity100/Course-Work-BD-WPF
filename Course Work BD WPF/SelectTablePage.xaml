@@ -1,0 +1,132 @@
+﻿<Page x:Class="Course_Work_BD_WPF.SelectTablePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="690" d:DesignWidth="530"
+      Title="QueryBuilder">
+
+    <Page.Resources>
+    </Page.Resources>
+
+    <Grid Width="530" Height="690">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF22C1C3" Offset="0"/>
+                <GradientStop Color="#FFFDBB2D" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="40" Margin="480,10,0,0" VerticalAlignment="Top" Width="40" Source="Images/ic_open_with_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="StartMoving">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Label Content="Accounting - Select Table" Margin="10,10,159,0" VerticalAlignment="Top" FontSize="30" Style="{StaticResource ResourceKey=RalewayFont}" Foreground="White" HorizontalAlignment="Center" TextOptions.TextHintingMode="Fixed" Width="361" Height="48"/>
+        <Controls:Tile Margin="22,112,368,438" Title="Книги" Click="TileClicked">
+            <Rectangle Width="50" Height="50">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Images/ic_book_white_48dp_2x.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Controls:Tile>
+        <Controls:Tile Margin="195,112,195,438" Title="Авторы" Click="TileClicked">
+            <Rectangle Width="50" Height="50">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Images/ic_author_white_64px.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Controls:Tile>
+        <Controls:Tile Margin="368,112,22,438" Title="Заказы" Click="TileClicked">
+            <Rectangle Width="50" Height="50">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Images/ic_order_white_64px.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Controls:Tile>
+        <Controls:Tile Margin="22,266,368,284" Title="Издательства" Click="TileClicked">
+            <Rectangle Width="50" Height="50">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Images/ic_publishment_white_64px.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Controls:Tile>
+        <Controls:Tile Margin="195,266,195,284" Title="Курьеры" Click="TileClicked">
+            <Rectangle Width="50" Height="50">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Images/ic_delivery_white_100px.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Controls:Tile>
+        <Controls:Tile Margin="368,266,22,284" Title="Продавцы" Click="TileClicked">
+            <Rectangle Width="50" Height="50">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Images/ic_employee_white_64px.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Controls:Tile>
+        <Controls:Tile Margin="22,420,368,130" Title="Покупатели" Click="TileClicked">
+            <Rectangle Width="50" Height="50">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Images/ic_buyer_white_100px.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Controls:Tile>
+        <Controls:Tile Margin="195,420,195,130" Title="Книги авторов" Click="TileClicked">
+            <Rectangle Width="50" Height="50">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Images/ic_author_book_white_64px.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Controls:Tile>
+        <Controls:Tile Margin="368,420,22,130" Title="Заказы на книги" Click="TileClicked">
+            <Rectangle Width="50" Height="50">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Images/ic_order_books_white_64px.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Controls:Tile>
+        <Image HorizontalAlignment="Left" Height="80" Margin="10,600,0,0" VerticalAlignment="Top" Width="80" Source="Images/ic_arrow_back_white_48dp_2x.png" RenderTransformOrigin="0.5, 0.5" MouseDown="BackToStatisticsPage">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="ScaleImageIn2"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.0" To="1.2" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.1" From="1.2" To="1.0" Storyboard.TargetName="ScaleImageIn2" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+    </Grid>
+</Page>
